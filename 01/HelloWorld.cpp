@@ -19,3 +19,11 @@ int main()
   //The program returning zero means that it exited successfully
   return 0;
 }
+
+/*
+Time permitting we'll talk about strings, some 
+escape sequences, math, types.
+
+How many students are in discussion today?
+cout << int(17/23. * 100) << "% of students attended discussion" << endl;
+*/
