@@ -5,9 +5,13 @@ Variables in C++ have types:
 Operators
 =========
 
-Here are some C++ operators
+The most common operators are `+`, `-`, `*`, `/`, `%`:
 
-    + - * / %
+    int x = 1 + 2;
+	cout << x << endl;
+	//prints 3
+	cout << 13 / 5 << endl;
+	//prints 2
 
 Some operators change the value of the variable they're applied to:
 
@@ -17,6 +21,19 @@ Some operators change the value of the variable they're applied to:
 	//Prints 11
 	//(There is also --. What do you think it does?)
 
+Other examples of operators like this are `=`, `+=`, `-=`, `*=`, `/=`, `%=`
+
+    int x = 6; 
+	//x==6
+	x += 5
+	//x==11
+	x %= 3
+	//x==2
+	x *= 10
+	//x==20
+
+Logic / Comparison
+------------------
 Comparison operators return a boolean value (true or false):
 
     == != < > <= >=
@@ -37,10 +54,18 @@ Comparison operators return a boolean value (true or false):
 	1 != 100 
 	true
 
-= += -= *= /= %=
 
-&& || !
+You can combine boolean values with the logical operators `&&` (and), `||` (or), `!` (not).
 
+	true && true
+	//true
+	false && true
+	//false
+	!true
+	//false
+
+Other
+-----
 
 << >> 
 
