@@ -29,21 +29,21 @@ Concatenation:
 
 You can access the chars which make up a string like this:
 
-    name = "Frederick"
-	cout << name[1] // prints 'r'
+    name = "Frederick";
+	cout << name[1]; // prints 'r'
 
 (Note that we count beginning with zero, not one.
 
 Here are a few more things we can do with strings:
 
     name = "Frederick";
-	cout << name.length; // prints 9
+	cout << name.length(); // prints 9
 	cout << name.substr(0,1); // prints 'F' (starts at place zero with length one)
-	name.replace(0,1, "McF") // replace substring starting at zero, of length one
+	name.replace(0,1, "McF"); // replace substring starting at zero, of length one
 	cout << name; // prints "McFrederick"
-	name.erace(0,2); //erases first two characters of name
+	name.erase(0,2); //erases first two characters of name
 	cout << name; prints "Frederick"
-	cout << name.find("der", 1) //returns the first instance of search string after pos 1
+	cout << name.find("der", 1); //returns the first instance of search string after pos 1
 
 
 Output Formatting
