@@ -21,7 +21,7 @@ use getline.
 
 ```c++
 string fullName;
-getline(cin, name);
+getline(cin, fullName);
 ```
 
 Here are some operations you can do on strings:
@@ -32,12 +32,13 @@ Concatenation:
 string name;
 name = "Joe";
 name += " Schmo";
-cout << name; //prints "Joe Schmo"
+cout << name << endl; //prints "Joe Schmo"
 ```
 
 You can access the chars which make up a string like this:
 
 ```c++
+string name;
 name = "Frederick";
 cout << name[1]; // prints 'r'
 ```
@@ -47,14 +48,14 @@ cout << name[1]; // prints 'r'
 Here are a few more things we can do with strings:
 
 ```c++
-name = "Frederick";
-cout << name.length(); // prints 9
-cout << name.substr(0,1); // prints 'F' (starts at place zero with length one)
-name.replace(0,1, "McF"); // replace substring starting at zero, of length one
-cout << name; // prints "McFrederick"
-name.erase(0,2); //erases first two characters of name
-cout << name; prints "Frederick"
-cout << name.find("der", 1); //returns the first instance of search string after pos 1
+string name = "Frederick";
+cout << name.length();       //prints 9
+cout << name.substr(0,1);    //prints 'F' (starts at place zero with length one)
+name.replace(0,1, "McF");    //replace substring starting at zero, of length one
+cout << name;                //prints "McFrederick"
+name.erase(0,2);             //erases first two characters of name
+cout << name;                //prints "Frederick"
+cout << name.find("der", 1); //prints the first instance of search string after pos 1 (3)
 ```
 
 Output Formatting
