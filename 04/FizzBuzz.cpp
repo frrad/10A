@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -17,25 +17,23 @@ int main(){
 }
 */
 
-//Version 2
-int main(){
-  int i = 1;
+// Version 2
+int main() {
+    int i = 1;
 
-  while (i <= 20){
+    while (i <= 20) {
 
+        cout << i;
+        if (i % 3 == 0) {
+            cout << "fizz";
+        }
 
-	cout << i;
-	if (i%3 ==0){
-	  cout << "fizz";
-	}
+        if (i % 5 == 0) {
+            cout << "buzz";
+        }
+        cout << endl;
+        i++;
+    }
 
-	if (i % 5 == 0){
-		  cout <<"buzz";
-		}
-	cout <<endl;
-	i++;
-  }
-
-
-  return 0;
+    return 0;
 }

@@ -3,24 +3,23 @@
 
 using namespace std;
 
-int main(){
-  
-  int odd = 1;
-  float pi;
+int main() {
 
-  while (odd <= 1000000){
-	int term = odd;
-	if ( term % 4 == 3){
-	  term *= -1;
-	}
+    int odd = 1;
+    float pi;
 
-	pi += 4. / term;
-	cout << setprecision(10) << fixed;
-	cout << "pi=" << pi << "\tterm=" << 4./term <<endl;
+    while (odd <= 1000000) {
+        int term = odd;
+        if (term % 4 == 3) {
+            term *= -1;
+        }
 
-	odd += 2;
-  }
+        pi += 4. / term;
+        cout << setprecision(10) << fixed;
+        cout << "pi=" << pi << "\tterm=" << 4. / term << endl;
 
+        odd += 2;
+    }
 
-  return 0;
+    return 0;
 }
