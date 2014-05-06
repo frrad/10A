@@ -4,13 +4,13 @@ using namespace std;
 
 int twice(int x) { return x * 2; }
 
-double twice(double x) { return x * 2; }
+string twice(string x) { return x + x; }
 
 int main() {
 
     int a = 10;
 
-    double x = 100;
+    string x = "asdf";
 
     cout << twice(a) << endl;
 
