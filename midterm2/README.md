@@ -23,7 +23,7 @@ Here are some exercises written by Ted Dokos to help you prepare for midterm 2
     2:
     ```
     * 
-    *
+     *
    ```
 
     5:
