@@ -84,7 +84,7 @@ Here are some exercises written by Ted Dokos to help you prepare for midterm 2
    	  ```
 
 7.    Here's a function where one parameter is pass by value, and the other is
-      pass by reference. What will be printed when main() is run?
+      pass by reference. What will be printed when `main()` is run?
 
 	  ```c++
       void foo(int a, int& b) {
