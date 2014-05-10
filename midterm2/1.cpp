@@ -4,8 +4,8 @@ using namespace std;
 
 void print_lines(int side_length) {
     for (int row = 0; row < side_length; row++) {
-        for (int j = 0; j < side_length; j++) {
-            if ((j - row) % 4 == 0)
+        for (int col = 0; col < side_length; col++) {
+            if ((col - row) % 4 == 0)
                 cout << "*";
             else
                 cout << " ";
