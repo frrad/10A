@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 // BUG: random numbers aren't random!
-// TODO: seed random number generatoaer
+// TODO: seed random number generator
 using namespace std;
 
 void printArray(int array[], int length) {
