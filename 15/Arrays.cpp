@@ -2,12 +2,13 @@
 #include <cstdlib>
 
 // BUG: random numbers aren't random!
-
+// TODO: seed random number generatoaer
 using namespace std;
 
 void printArray(int array[], int length) {
     int i;
     for (i = 0; i < length; i++) {
+
         cout << i << " : " << array[i] << endl;
     }
 }
@@ -20,17 +21,6 @@ void fillRandom(int array[], int length) {
 }
 
 void reverseArray(int array[], int length) {
-    int tempArray[length];
-    int i;
-    for (i = 0; i < length; i++) {
-        tempArray[i] = array[i];
-    }
-    for (i = 0; i < length; i++) {
-        array[i] = tempArray[length - i - 1];
-    }
-}
-
-void reverseArray2(int array[], int length) {
     int i;
     for (i = 0; i < length / 2; i++) {
         int temp = array[i];
@@ -59,7 +49,7 @@ int minLarger(int array[], int length, int x) {
     do {
         smallest = array[i];
         i++;
-    } while (smallest <= x);
+    } while (smallest <= x && i < length);
 
     for (; i < length; i++) {
         if (array[i] < smallest && array[i] > x)
@@ -68,7 +58,33 @@ int minLarger(int array[], int length, int x) {
     return smallest;
 }
 
-void sort(int array[], int length) {
+int minLargerIndex(int array[], int length, int x) {
+    int i = 0;
+    int smallest;
+    int index;
+    do {
+        smallest = array[i];
+        index = i;
+        i++;
+    } while (smallest <= x && i < length);
+
+    for (; i < length; i++) {
+        if (array[i] < smallest && array[i] > x) {
+            smallest = array[i];
+            index = i;
+        }
+    }
+    return index;
+}
+
+void swap(int array[], int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+
+// just prints in sorted order
+void sortPrint(int array[], int length) {
     int smallest = min(array, length);
     int i;
     for (i = 0; i < length; i++) {
@@ -77,15 +93,44 @@ void sort(int array[], int length) {
     }
 }
 
+void sort(int array[], int length) {
+    int smallest = min(array, length);
+    int smindex = minLargerIndex(array, length, -100000);
+    int i;
+
+    for (i = 0; i < length; i++) {
+        // cout << i << " " << smindex << endl;
+        swap(array, i, smindex);
+        smindex = minLargerIndex(array, length, smallest);
+        smallest = minLarger(array, length, smallest);
+    }
+}
+
 int main() {
-    int arrayEx[10] = {};
-    fillRandom(arrayEx, 10);
-    printArray(arrayEx, 10);
+    int const arrayLength = 15;
+    int arrayEx[arrayLength] = {};
+
+    cout << "first we have zeroes" << endl;
+
+    printArray(arrayEx, arrayLength);
+
+    cout << "now some random numbers!" << endl;
+
+    fillRandom(arrayEx, arrayLength);
+    printArray(arrayEx, arrayLength);
 
     cout << "reversed is " << endl;
 
-    reverseArray2(arrayEx, 10);
-    printArray(arrayEx, 10);
+    reverseArray(arrayEx, arrayLength);
+    printArray(arrayEx, arrayLength);
 
-    sort(arrayEx, 10);
+    cout << "ascending sorted is " << endl;
+
+    sort(arrayEx, arrayLength);
+    printArray(arrayEx, arrayLength);
+
+    cout << "descending sorted is " << endl;
+
+    reverseArray(arrayEx, arrayLength);
+    printArray(arrayEx, arrayLength);
 }
