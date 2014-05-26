@@ -242,7 +242,7 @@ char WhoWinsRandom(Game &game) {
     return ' ';
 }
 
-int *RandomStats(Game &game, int *stats) {
+void RandomStats(Game &game, int *stats) {
     const int trials = 1000;
     int owins = 0;
     int xwins = 0;
@@ -298,7 +298,6 @@ int main() {
         game.Print();
         int status[3];
         RandomStats(game, status);
-        cout << status[0] << status[1] << status[2] << endl;
 
     } while (!game.XWon() && !game.OWon() && !game.Tied());
 
