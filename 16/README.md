@@ -3,9 +3,9 @@ Vectors
 
 They are like arrays but cooler. Specifically they: 
 
-    * Can be resized
-    * Know their size
-    * Can be returned by functions
+* Can be resized
+* Know their size
+* Can be returned by functions
 
 How I use?
 
